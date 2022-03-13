@@ -47,10 +47,19 @@ mAP@0.5: unknown
 
 <br>
 
+### The Data
+
+<p>Labelled with <a href="https://github.com/tzutalin/labelImg">labelImg</a></p>
+
+<br>
+
 ### Utilities
 
 <ul>slice_images.py for resizing HR input images</ul>
 <ul>split_train_val.py for dividing data and structuring into Yolo-readable format</ul>
+<ul>count_instances.py to count class instances in labels</ul>
+
+
 
 
 
