@@ -19,11 +19,11 @@ YOLOv5 is a family of object detection architectures and models pretrained on th
 ### Training Checkpoints
 
 <p>
-   
+
    
    
 cornmodem864i12002<br>
-Colab trained model with 1200 images (First50 dataset)<br>
+Colab trained model with 1,200 images (First50 dataset) containing 2,727 class instances<br>
 ```--img 864 --batch 8 --epochs 150 --cfg models/yolov5l.yaml```<br>
 Peak performance in 23rd epoch<br>
 mAP@0.5:
