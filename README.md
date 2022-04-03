@@ -56,11 +56,11 @@ mAP@0.5: unknown
 
 ### Workflow
 
-<ol>Feed image into Yolov5 object detector trained on corn plant centres</ol>
-<ol>Find the orientation of rows (well-differentiated lines in point cloud)</ol>
-<ol>Find all rows with >= 2 plants</ol>
-<ol>Measure variability in planting distance</ol>
-<ol>Output Coefficient of Variability per row and per image</ol>
+<li>Feed image into Yolov5 object detector trained on corn plant centres</li>
+<li>Find the orientation of rows (well-differentiated lines in point cloud)</li>
+<li>Find all rows with >= 2 plants</li>
+<li>Measure variability in planting distance</li>
+<li>Output Coefficient of Variability per row and per image</li>
 
 <br>
 
