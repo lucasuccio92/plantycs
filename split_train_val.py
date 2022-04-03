@@ -59,3 +59,21 @@ if copy:
 
 # finish
 print('[OK]')
+
+
+
+
+
+''' ###########################################################################
+Increase source data volume by flipping/rotating training data images and labels
+
+To substitute (or be included in) split_train_val.py
+########################################################################### '''
+# imports
+import os
+
+# when splitting and moving input data, operate:
+#   on images with Imagemagick
+#   on labels
+
+# integrate into split_train_val.py...

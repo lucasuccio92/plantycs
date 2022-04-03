@@ -258,3 +258,5 @@ fabric.properties
 # Custom-created folders
 test-data/*
 train-data/*
+
+notes.ipynb
