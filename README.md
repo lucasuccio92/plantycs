@@ -53,11 +53,23 @@ mAP@0.5: unknown
 
 <br>
 
+
+### Workflow
+
+<ol>Feed image into Yolov5 object detector trained on corn plant centres</ol>
+<ol>Find the orientation of rows (well-differentiated lines in point cloud)</ol>
+<ol>Find all rows with >= 2 plants</ol>
+<ol>Measure variability in planting distance</ol>
+<ol>Output Coefficient of Variability per row and per image</ol>
+
+<br>
+
 ### Utilities
 
 <ul>slice_images.py for resizing HR input images</ul>
 <ul>split_train_val.py for dividing data and structuring into Yolo-readable format</ul>
 <ul>count_instances.py to count class instances in labels</ul>
+<ul>find_kornrows.py to find the orientation of cornrows in the field</ul>
 
 
 
