@@ -14,9 +14,8 @@ import argparse
 import matplotlib.pyplot as plt
 import PIL.Image as img
 import numpy as np
-from tqdm import tqdm
 
-VISUALISE = True
+VISUALISE = False
 HIST_BINS = 40
 
 def rotate(origin, point, angle):
@@ -104,7 +103,7 @@ def find_orientation(centroids, img):
     if VISUALISE:
         plot_orientation(img, fine, centroids, hist)
         
-    return fine
+    return fine, centroids
 
 def plot_orientation(img, angle, centroids, hist):
     # plot scrape results
@@ -130,11 +129,11 @@ def plot_orientation(img, angle, centroids, hist):
         i += 1
     plt.savefig(f'{filename}_{i}.png', dpi=300)
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Kornrow finder")
-    parser.add_argument('--image_name', required=True, help="Name of the input image (with or without extension)")
-    args = parser.parse_args()
-    field = args.image_name
+def main(field):
+    #parser = argparse.ArgumentParser(description="Kornrow finder")
+    #parser.add_argument('--image_name', required=True, help="Name of the input image (with or without extension)")
+    #args = parser.parse_args()
+    #field = args.image_name
     if field.lower().endswith('.jpg'):
         field = field[:-4]
     image = field + '.JPG'
@@ -143,6 +142,7 @@ if __name__ == "__main__":
     #img_x, img_y = rgb.size
     plants = get_centroids(lables, rgb.size)
     orientation = find_orientation(plants, rgb)
+    return orientation, plants
     
 
 
