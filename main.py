@@ -27,10 +27,11 @@ def get_all_lines(plants):
     return all_lines
 
 def main():
-    image = imread()
-    img_file = 'kornrows/DJI_20220211072437_0080_Z.JPG'
+    #image = imread()
+    img_file = 'kornrows/DJI_20220211065254_0005_Z.JPG'
     # get orientation of corn rows
-    orientation, plants = get_orientation(img_file)
+    orientation, plants = get_orientation.main(img_file)
+    print(f'Orientation: {orientation}°')
 
 # PLANT SPACING
 
