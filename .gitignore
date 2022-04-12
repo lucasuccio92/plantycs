@@ -261,3 +261,7 @@ train-data/*
 kornrows/*
 
 notes.ipynb
+examples/korn_centres.gpkg
+examples/kornrows.qgz
+examples/workflow.odp
+examples/Pix4D_GSD_Calculator.ods

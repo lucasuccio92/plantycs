@@ -1,46 +1,27 @@
-from cv2 import imread
-from math import atan as arctan
-from libxmp.utils import file_to_dict
-import find_kornrows as get_orientation
-from shapely.geometry import Point, LineString
-import matplotlib.pyplot as plt
-from math import tan
+import os
+import find_kornrows
+import json
+import pandas as pd
 
 
-
-
-
-
-
-def get_all_lines(plants):
-    # get all point to point lines
-    points = [Point(plant) for plant in plants]
-    all_lines = []
-    for p0 in points:
-        for p1 in points:
-            bearing = tan((p1.x - p0.x) / (p1.y - p0.y))
-            # filter by orientation
-            if bearing > (0.95 * orientation) or bearing < (1.05 * orientation):
-                all_lines.append(LineString(p0, p1))
-
-    print(len(all_lines))
-    return all_lines
-
-def main():
-    #image = imread()
-    img_file = 'kornrows/DJI_20220211065254_0005_Z.JPG'
-    # get orientation of corn rows
-    orientation, plants = get_orientation.main(img_file)
-    print(f'Orientation: {orientation}°')
-
-# PLANT SPACING
-
-# VARIATION COEFFICIENT
-# CV = StD / avg_spacing * 100
-
+def main(folder):
+    geojson = []
+    samples = os.listdir(folder)
+    os.chdir(folder)
+    samples = [s for s in samples if s.lower().endswith('.jpg')]
+    for sample in samples:
+        print('Processing', sample)
+        result = find_kornrows.analyse_field(sample)
+        if result is not None:
+            geojson.append(result)
+        print('\n')
+    with open('output.json', 'w') as output:
+        json.dump(geojson, output, indent=2)
+    geojson.to_csv('output.csv')
 
 if __name__ == '__main__':
-    main()
+    folder = 'kornrows/geojson_test/'
+    main(folder)
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
