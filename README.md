@@ -61,6 +61,18 @@ mAP@0.5: unknown
 
 <br>
 
+### To use
+
+1. Detect corn plants in input images and generate label files:
+```python detect.py --source [test-data] --weights [weights-file] --conf [confidence] --img [image-size] --save-txt --name [name]```
+<br>e.g.:
+```python detect.py --source test-data/ --weights runs/train/cornmodem864i12002/weights/best.pt --conf 0.2 --img 3072 --save-txt --name testrun1```
+
+2. Run single samples through find_kornrows.py:
+```python find_kornrows.py --image_name [image]```
+<br>Run multiple samples through main.py:
+```python main.py --imgdir [folder-name]```
+
 ### Utilities
 
 <ul>slice_images.py for resizing HR input images</ul>
